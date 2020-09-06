@@ -52,13 +52,14 @@ app.get('/weather', (req, res) => {
     //         return res.send({ error })
     //     }
         //console.log("Lati"+latitude+"Longi"+longitude)
-        forecast(req.query.address ,(error, forecastData) => {
+        forecast(req.query.address ,(error, forecastData,locationData) => {
             if (error) {
                 return res.send({ error })
             }
 
             res.send({
                 forecast: forecastData,
+                location:locationData
                 // address: req.query.address
             })
         })

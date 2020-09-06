@@ -10,7 +10,8 @@ forcast=(add,callback) =>{
             callback('Unable to Find location,Make Sure You Have Entered The Correct Location')
         }else{
             
-            callback(undefined,response.body.current.weather_descriptions+'.It is currently '+' '+response.body.current.temperature+' '+' Degrees,and it feelslike '+' '+response.body.current.feelslike+' '+ ' Degrees. \n \n'+"Location:"+response.body.location.name+","+response.body.location.region+",   "+response.body.location.country)
+            callback(undefined,response.body.current.weather_descriptions+'.It is currently '+' '+response.body.current.temperature+' '+' Degrees,and it feelslike '+' '+response.body.current.feelslike+' '+ ' Degrees.','Location:'+response.body.location.name+','+response.body.location.region+','+response.body.location.country)
+            //callback(undefined,response.body.current.weather_descriptions+'.It is currently '+' '+response.body.current.temperature+' '+' Degrees,and it feelslike '+' '+response.body.current.feelslike+' '+ ' Degrees. \n '+"Location:"+response.body.location.name+","+response.body.location.region+",   "+response.body.location.country)
         }
     })
 }
