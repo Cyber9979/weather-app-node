@@ -7,9 +7,9 @@ const geocode = (address,callback)=>{
         
     request({url,json:true},(error,response)=>{
         if(error){
-            callback(chalk.red.bgWhite.inverse('Unable To Connect to The Website Make Sure You Have Currenty Working Internet Connection.'),undefined)
+            callback('Unable To Connect to The Website Make Sure You Have Currenty Working Internet Connection.',undefined)
         }else if(response.body.features[0]==null){
-            callback(chalk.yellow.inverse('Unable to get the Coordinates.Make sure have entered the correct location,Try with othe keyword or change the spell of location.'),undefined)
+            callback('Unable to get the Coordinates.Make sure have entered the correct location,Try with othe keyword or change the spell of location',undefined)
         }else{
             callback(undefined, {
                 latitude: response.body.features[0].center[1],
